@@ -1,0 +1,22 @@
+{
+  "name": "coding-challenge",
+  "version": "1.0.0",
+  "description": "Coding challenge MuleSoft",
+  "main": "./scripts/index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node ./scripts/index.js"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "script"
+  ],
+  "author": "carobamarillo",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "prettier": "2.4.1"
+  }
+}
