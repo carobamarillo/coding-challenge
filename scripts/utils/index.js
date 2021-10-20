@@ -2,6 +2,11 @@ const Program = require('./Program.js');
 
 const programsMap = new Map();
 
+/**
+ * Get program
+ * @param {string} name
+ * @returns {Object}
+ */
 const getProgram = name => {
   let program = programsMap.get(name);
   if (!program) {
@@ -12,10 +17,21 @@ const getProgram = name => {
   return program;
 };
 
+/**
+ * Check if program is installed or not
+ * @param {Object} componentToInstall
+ * @param {Object} installedComponents
+ * @returns {boolean}
+ */
 const isComponentInstalled = (componentToInstall, installedComponents) => {
   return installedComponents.includes(componentToInstall);
 };
 
+/**
+ * Install component
+ * @param {Object} component
+ * @param {Object} installedComponents
+ */
 const installComponent = (component, installedComponents) => {
   if (component.name) {
     console.log(`Installing ${component.name}`);
@@ -23,6 +39,11 @@ const installComponent = (component, installedComponents) => {
   }
 };
 
+/**
+ * Manage program dependencies
+ * @param {string} programName
+ * @param {string} commandInput
+ */
 const manageDependencies = (programName, commandInput) => {
   for (let i = 2; i < commandInput.length; i++) {
     const dependency = commandInput.split(' ')[i];
@@ -36,6 +57,12 @@ const manageDependencies = (programName, commandInput) => {
   }
 };
 
+/**
+ * Checks if component can be removed
+ * @param {Object} componentToRemove
+ * @param {Object} installedComponents
+ * @returns {boolean}
+ */
 const canRemoveComponent = (componentToRemove, installedComponents) => {
   for (const component of installedComponents) {
     const requiredDependencies = component.dependencies;
